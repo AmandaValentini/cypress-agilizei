@@ -1,0 +1,154 @@
+[
+  {
+    "description": "Como usuário desejo acessar a listagem\nPara que possa visualizar os meus dados de cadastro",
+    "keyword": "Feature",
+    "name": "Listagem",
+    "line": 1,
+    "id": "listagem",
+    "tags": [],
+    "uri": "Listagem.feature",
+    "elements": [
+      {
+        "id": "listagem;listagem-sem-registro",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Listagem sem registro",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que o site não possui registro",
+            "result": {
+              "status": "passed",
+              "duration": 60847000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "acessar a listgem",
+            "result": {
+              "status": "passed",
+              "duration": 5443000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "devo visualizar a listagem vazia",
+            "result": {
+              "status": "passed",
+              "duration": 65000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "listagem;listagem-com-um-registro",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Listagem com um registro",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "que o site possui apenas um registro",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "acessar a listgem",
+            "result": {
+              "status": "passed",
+              "duration": 7609000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "devo visualizar apenas um registro",
+            "result": {
+              "status": "passed",
+              "duration": 217000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "Como usuário desejo realizar um Cadastro\nPara que possa acessar um sistema",
+    "keyword": "Feature",
+    "name": "Cadastro",
+    "line": 1,
+    "id": "cadastro",
+    "tags": [],
+    "uri": "Cadastro.feature",
+    "elements": [
+      {
+        "id": "cadastro;cadastro-de-um-usuário-no-site",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Cadastro de um usuário no site",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "que acesse o site",
+            "result": {
+              "status": "passed",
+              "duration": 28026000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "informar meus dados",
+            "result": {
+              "status": "passed",
+              "duration": 6184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "salvar",
+            "result": {
+              "status": "passed",
+              "duration": 403000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "devo ser cadastrado",
+            "result": {
+              "status": "passed",
+              "duration": 25411000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
