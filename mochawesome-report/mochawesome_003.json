@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-10T01:11:45.904Z",
+    "end": "2020-08-10T01:12:27.478Z",
+    "duration": 41574,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb51583f-3064-4755-b17c-abedf5ad9fe9",
+      "title": "",
+      "fullFile": "cypress/integration/examples/cadastro.spec.js",
+      "file": "cypress/integration/examples/cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "66f9dc36-f3f9-4e9e-aeaf-a44e68d25730",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro de usuário no site",
+              "fullTitle": "Cadastro Cadastro de usuário no site",
+              "timedOut": null,
+              "duration": 41413,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//rotas\ncy.server();\ncy.route('POST', '**/api/1/databases/userdetails/collections/newtable?**').as('postNewtable');\ncy.route('POST', '**/api/1/databases/userdetails/collections/usertable?**').as('postUsertable');\ncy.route('GET', '**/api/1/databases/userdetails/collections/newtable?**').as('getNewtable');\ncy.visit('Register.html'); //type\ncy.get('input[placeholder=\"First Name\"]').type(chance.first());\ncy.get('input[ng-model=\"LastName\"]').type(chance.last());\ncy.get('input[ng-model=\"EmailAdress\"]').type(chance.email());\ncy.get('input[ng-model=\"Phone\"]').type(chance.phone({\n  formatted: false\n})); //check -> radio's e checkboxes\ncy.get('input[value=\"FeMale\"]').check();\ncy.get('input[type=checkbox]').check('Cricket');\ncy.get('input[type=checkbox]').check('Movies'); //select -> select e select2 (combos)\ncy.get('select#Skills').select('Javascript');\ncy.get('select#countries').select('Australia');\ncy.get('select#country').select('Australia', {\n  force: true\n});\ncy.get('select#yearbox').select('1990');\ncy.get('select[ng-model=\"monthbox\"]').select('May');\ncy.get('select#daybox').select('24');\ncy.get('input#firstpassword').type('Agilizei@2020');\ncy.get('input#secondpassword').type('Agilizei@2020');\ncy.get('input#imagesrc').attachFile('imagem-foto.gif');\ncy.get('button#submitbtn').click();\ncy.wait('@postNewtable').then(function (resNewtable) {\n  // console.log(resNewtable.status)\n  // cy.log(resNewtable.status)\n  expect(resNewtable.status).to.eq(200);\n});\ncy.wait('@postUsertable').then(function (resUsertable) {\n  // console.log(resNewtable.status)\n  // cy.log(resNewtable.status)\n  expect(resUsertable.status).to.eq(200);\n});\ncy.wait('@getNewtable').then(function (resNewtable) {\n  // console.log(resNewtable.status)\n  // cy.log(resNewtable.status)\n  expect(resNewtable.status).to.eq(200);\n});\ncy.url().should('contain', 'WebTable.html');",
+              "err": {},
+              "uuid": "d57572f1-b950-4af8-a2ee-49f3fa088730",
+              "parentUUID": "66f9dc36-f3f9-4e9e-aeaf-a44e68d25730",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d57572f1-b950-4af8-a2ee-49f3fa088730"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 41413,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": "true",
+        "overwrite": "false",
+        "html": "false",
+        "json": "true"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
